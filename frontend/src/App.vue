@@ -252,7 +252,7 @@ async function send() {
   abortController = new AbortController()
 
   try {
-    const res = await fetch(`${API_BASE}/api/chat/stream`, {
+    const res = await fetch(`${API_BASE}/chat/stream`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       signal: abortController.signal,

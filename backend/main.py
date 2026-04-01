@@ -14,13 +14,13 @@ client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 app = FastAPI()
 
 origins = os.getenv("ALLOWED_ORIGINS", "*").split(",")
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 SYSTEM_PROMPTS = {
     "default":    "You are a helpful assistant. Reply in the same language as the user.",
     "coder":      "You are an expert programmer. Provide clean, well-commented code with explanations. Reply in the same language as the user.",

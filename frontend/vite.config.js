@@ -9,9 +9,11 @@ export default defineConfig(({ mode }) => {
     plugins: [vue()],
     server: {
       proxy: {
-        '/api': {
+        '/chat': {
           target: 'http://localhost:8000',
-          rewrite: (path) => path.replace(/^\/api/, ''),
+        },
+        '/models': {
+          target: 'http://localhost:8000',
         },
       },
     },
