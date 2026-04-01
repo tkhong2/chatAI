@@ -7,3 +7,5 @@ services:
     envVars:
       - key: GROQ_API_KEY
         sync: false
+      - key: ALLOWED_ORIGINS
+        value: https://chat-ai-sigma-vert.vercel.app
