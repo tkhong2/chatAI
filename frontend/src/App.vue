@@ -3,7 +3,10 @@
     <!-- Sidebar -->
     <aside class="sidebar" :class="{ open: sidebarOpen }">
       <div class="sidebar-header">
-        <span class="logo">🤖 HongGPT</span>
+        <div class="logo-wrap">
+          <img src="/logo.svg" width="28" height="28" alt="HongGPT" />
+          <span class="logo">HongGPT</span>
+        </div>
         <button class="new-chat-btn" @click="newChat" title="Cuộc trò chuyện mới">+</button>
       </div>
 
@@ -51,7 +54,8 @@
         </div>
 
         <div v-for="(msg, i) in messages" :key="i" class="message" :class="msg.role">
-          <div class="avatar">{{ msg.role === 'user' ? '👤' : '🟠' }}</div>
+          <div class="avatar">{{ msg.role === 'user' ? '👤' : '' }}</div>
+          <img v-if="msg.role === 'assistant'" src="/logo.svg" class="avatar" alt="AI" />
           <div class="msg-wrap">
             <div class="bubble" v-html="renderContent(msg.content)"></div>
             <div class="msg-actions">
@@ -65,7 +69,7 @@
 
         <!-- Streaming indicator -->
         <div v-if="streaming" class="message assistant">
-          <div class="avatar">🟠</div>
+          <img src="/logo.svg" class="avatar" alt="AI" />
           <div class="msg-wrap">
             <div class="bubble" v-html="renderContent(streamBuffer) || '<span class=\'dots\'><span>.</span><span>.</span><span>.</span></span>'"></div>
           </div>
