@@ -3,7 +3,7 @@
     <!-- Sidebar -->
     <aside class="sidebar" :class="{ open: sidebarOpen }">
       <div class="sidebar-header">
-        <span class="logo">🤖 Groq Chat</span>
+        <span class="logo">🤖 HongGPT</span>
         <button class="new-chat-btn" @click="newChat" title="Cuộc trò chuyện mới">+</button>
       </div>
 
