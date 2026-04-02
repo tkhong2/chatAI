@@ -54,8 +54,8 @@
         </div>
 
         <div v-for="(msg, i) in messages" :key="i" class="message" :class="msg.role">
-          <div class="avatar">{{ msg.role === 'user' ? '👤' : '' }}</div>
-          <img v-if="msg.role === 'assistant'" src="/logo.svg" class="avatar" alt="AI" />
+          <div v-if="msg.role === 'user'" class="avatar">👤</div>
+          <img v-else src="/logo.svg" class="avatar" alt="AI" />
           <div class="msg-wrap">
             <div class="bubble" v-html="renderContent(msg.content)"></div>
             <div class="msg-actions">
