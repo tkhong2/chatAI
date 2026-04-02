@@ -143,11 +143,11 @@ let   abortController = null
 
 // --- Persistence ---
 function saveConvs() {
-  localStorage.setItem('groq_convs', JSON.stringify(conversations.value))
+  localStorage.setItem('honggpt_convs', JSON.stringify(conversations.value))
 }
 
 function loadConvs() {
-  const raw = localStorage.getItem('groq_convs')
+  const raw = localStorage.getItem('honggpt_convs')
   if (raw) conversations.value = JSON.parse(raw)
 }
 
