@@ -22,14 +22,19 @@ body {
   background: var(--bg);
   color: var(--text);
   height: 100vh;
+  height: 100dvh;
   overflow: hidden;
 }
 
-#app { height: 100vh; }
+#app {
+  height: 100vh;
+  height: 100dvh;
+}
 
 .app {
   display: flex;
   height: 100vh;
+  height: 100dvh;
 }
 
 /* ===== SIDEBAR ===== */
@@ -401,6 +406,7 @@ textarea:disabled { opacity: 0.5; }
     position: fixed;
     top: 0; left: 0;
     height: 100vh;
+    height: 100dvh;
     z-index: 100;
     transform: translateX(-100%);
     box-shadow: 4px 0 20px rgba(0,0,0,0.1);
